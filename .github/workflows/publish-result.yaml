@@ -23,11 +23,3 @@ jobs:
 
       - name: Import data
         run: Rscript -e 'source("1_gsheet_publish.R")'
-
-      - name: Commit results
-        run: |
-          git config --local user.email "actions@github.com"
-          git config --local user.name "GitHub Actions"
-          git add survey_data.rds
-          git commit -m 'Data updated' || echo "No changes to commit"
-          git push origin || echo "No changes to commit"
