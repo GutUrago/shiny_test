@@ -1,10 +1,11 @@
 name: Test Schedule
 
 on:
+  schedule:
+    - cron: '*/5 * * * *'
   push:
     branches: main
-  schedule:
-    - cron: '*/3 * * * *'
+
 
 jobs:
   import-data:
